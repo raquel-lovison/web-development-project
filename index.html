@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Ensures the page is responsive and adjusts properly on different devices -->
+    <title>Home Page</title>   <!-- Sets the title of the page that appears in the browser tab -->
+    <link rel="stylesheet" href="styles/styles.css">    <!-- Link to an external CSS file -->
+    <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch&display=swap" rel="stylesheet">    <!-- Link to 'Cabin Sketch' font, adding a custom style to text -->
+    <style>
+        .content {
+            margin-top: 60px; /* Adjust based on header height */
+            padding: 20px;  /* Adds padding for spacing */
+        }
+       
+        h1 {
+            color:rgb(25, 136, 95);  /* Sets the text color to a green shade */
+            text-align: center;   /* Centers the text horizontally */ 
+            font-family: 'Cabin Sketch', cursive;  /* Uses the custom Font */
+            font-style:normal;  /* Sets the font style to normal */
+            font-size:45px;  /* Sets a large font size for the heading */
+        }
+
+        p {
+            text-align: center;
+            font-family:'Cabin Sketch', normal;
+            font-size: 19px;
+            color:rgb(25, 136, 95);
+        }
+
+        .mosaic-section {
+            display: grid;  /* Uses a CSS grid layout for arranging images */
+            grid-template-columns: repeat(3, 1fr);  /* Creates 3 equal-width columns */
+            gap: 10px;   /* Adds space between each grid item */
+            max-width: 1000px; /* Limits the maximum width of the grid for larger screens */
+            margin: 40px auto;  /* Centers the grid section horizontally with top and bottom margin */
+        }
+
+        .mosaic-item {
+            width: 100%;  /* Makes each image fills the full width of its grid cell */
+            height: 200px;  /* Sets a fixed height for each image */
+            object-fit: cover;  /* Ensures images maintain aspect ratio */
+            border-radius: 30px; /* Rounds the corners of the images */
+        }
+
+        body {
+            height:100vh;  /* Sets body height to 100% of the viewport height */
+            background:linear-gradient(to bottom, lightblue, lightcoral)    /* Creates a gradient background that transitions from light blue to light coral */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>  <!-- Navigation bar with links to different pages -->
+            <span class="hamburger" onclick="toggleMenu()">&#9776;</span>    <!-- Hamburger menu icon for mobile nav, triggers the toggleMenu  -->
+            <a href="index.html">Home</a>   <!-- Link to the Home page -->
+            <a href="about.html">About Me</a>  <!-- Link to the About Me page -->
+            <a href="contact.html">Contact</a>  <!-- Link to the Contact page -->
+        </nav>
+    </header>
+    <div class="content">
+        <div class="header">
+            <h1>Oh Heyy, I'm Raquel</h1>
+            <br>
+            <p class="subtitle">I'm an information Technology student at Kennesaw State University.</p>
+        </div>
+    
+            <div class="mosaic-section"> <!-- A section displaying a grid of images in a mosaic style -->
+                <img src="images/claude.jpg" alt="Mosaic Image 1" class="mosaic-item"> 
+                <img src="images/computer.jpg" alt="Mosaic Image 2" class="mosaic-item">
+                <img src="images/travel.jpg" alt="Mosaic Image 3" class="mosaic-item">
+                <img src="images/boss.jpg" alt="Mosaic Image 4" class="mosaic-item">
+                <img src="images/ski.jpg" alt="Mosaic Image 5" class="mosaic-item">
+                <img src="images/work.jpg" alt="Mosaic Image 6" class="mosaic-item">
+            </div>
+        </div>
+    <script>
+        function toggleMenu() {   /* Show/hide the menu on small screens */
+            var nav = document.querySelector('nav');
+            nav.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

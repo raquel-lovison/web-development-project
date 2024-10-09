@@ -1,0 +1,38 @@
+body {
+    margin: 0;  /* Removes default margin around the body for a clean layout */
+    font-family: 'Cabin Sketch', cursive;
+}
+header {
+    position: fixed;  /* Fixes the header at the top of the viewport */
+    top: 0;   /* Aligns the header to the top of the page */
+    width: 100%;
+    background-color: #05624f;  /* Sets a dark green background color for the header */
+    color: white;
+    padding: 10px 0;
+    text-align: center;  /* Center the text */
+}
+nav a {
+    color: rgb(255, 255, 255); /* Sets the color */
+    margin: 0 15px;  /* Adds horizontal spacing between navigation links */
+    text-decoration: none; /* Removes the default underline from links */
+}
+nav a:hover {
+    text-decoration: underline;  /* Adds an underline when the user hovers over a link */
+}
+.hamburger {
+    display: none;   /* Hides the hamburger menu */
+    cursor: pointer;
+    font-size: 24px;    /* Sets a larger font size */
+}
+@media (max-width: 600px) {     /* Media query for small screen */
+    nav a {
+        display: none;    /* Hides navigation links */
+        margin: 10px 0;   /* Adjusts margin for the vertical lis */
+    }
+    nav.active a {
+        display: block;  /* Shows the navigation links as a vertical list */
+    }
+    .hamburger {
+        display: block;  /* Displays the hamburger menu icon on small screens */
+    }
+}

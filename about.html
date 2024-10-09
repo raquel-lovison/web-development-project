@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch&display=swap" rel="stylesheet">
+    <style>
+        .content {
+            margin-top: 80px; /* Adjust based on header height */
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;  /* Centers the items horizontally */
+            align-items: flex-start; /* vertically aligns at the beginning */
+        }
+        .image-placeholder {
+            width: 400px;   /* Sets the width of the image */
+            height: 500px;  /* Sets the height of the image */
+            background-image: url('images/image.jpg');  /* Sets the background image */
+            background-size: Cover;  /* Ensures the image covers the entire area without stretching */
+            background-position: -90px;   /* Adjusts the position of the background image */
+            margin-right: 30px;  /* Adds space to the right of the image placeholder */
+            flex-shrink: 0;   /* Prevents the image from shrinking when the content wraps */
+            border-radius: 30px;  /* Rounds the corners of the image */
+        }
+        .text-content {
+            max-width: 600px;   /* Limits the width of the text content for better readability */
+        }
+        .paragraph {
+            margin-bottom: 20px;  /* Adds space below each paragraph to separate them */
+        }
+        .sub-header {
+            width: 100%;
+            margin-left: 450px;  /* Adds space to the left for positioning */
+        }
+        h1 {
+            width: 100%;
+            text-align:Center ;  /* Centers the heading text */
+            color:rgb(25, 136, 95);  /* green color for the heading text */
+            font-family: 'Cabin Sketch', cursive;  /* custom Google Font */
+            font-style:normal;   /* Sets the font style to normal */
+            font-size: 40px;  /* Sets a large font size */
+        }
+        body {
+            height:100vh;
+            background:linear-gradient(to bottom, rgb(223, 230, 163), lightcoral)  /* Creates a gradient background color */
+        }
+        @media (max-width: 600px) {     /* Makes the page responsive on mobile devices */
+            .content {
+                flex-direction: column;   /* Stacks the content items vertically */
+                align-items: center;   /* Centers the content items */
+            }
+            .image-placeholder {       /* Removes right margin and adds bottom margin for spacing */
+                margin: 0 0 20px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>   <!-- Navigation bar with links to other pages -->
+            <span class="hamburger" onclick="toggleMenu()">&#9776;</span>
+            <a href="index.html">Home</a>   <!-- Link to the Home page -->
+            <a href="about.html">About Me</a>    <!-- Link to the About Me page -->
+            <a href="contact.html">Contact</a>   <!-- Link to the Contact page -->
+        </nav>
+    </header>
+    <div class="content">  <!-- Main content area of the page -->
+        <div class="sub-header">
+            <br>
+            <br>
+            <br>
+            <h1>So, Who am I?</h1>
+        </div>
+        
+        <div class="image-placeholder">   <!-- Placeholder for an image with a background image applied through CSS -->
+        </div>
+        <div class="text-content">    <!-- About Me section -->
+            <div class="paragraph">
+                <br>
+                <br>
+                <br>
+                <p> My name is Raquel, and I was born and raised in Brazil.
+                    I love being outdoors, whether snowboarding or exploring new hiking trails. 
+                    I have a passsion for travel, which allows me learn about different cultures and try a variety of cuisines from around the world.
+                    My curiosity and love for new experience drive me to keep learning and exploring! </p>
+            </div>
+            <div class="paragraph">
+                <p> I have a background in healthcare, where I developed a strong foundation in problem-solving and attention to detail.
+                    While in Brazil, I also worked as a photographer, capturing the beauty of everyday moments and refining my creative perspective.
+                    These experiences have taught me to appreciate both the technical and artistic sides of any field. 
+                    My journey eventually led me into IT, where I discovered a passion for cybersecurity. </p>
+            </div>
+            <div class="paragraph">
+                <p> As I continue advancing my career in IT and cybersecurity, I'm focused on leveraging my technical skills and experiences to make a meaningful impact in digital security.
+                    I'm expanding my knowledge and seeking opportunities to combine my passion for technology with practical problem-solving. </p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleMenu() {  // This function is used to show/hide the menu on mobile devices //
+            var nav = document.querySelector('nav');
+            nav.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

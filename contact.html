@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>  <!-- Sets the title that appears in the browser tab -->
+    <link rel="stylesheet" href="styles/styles.css">  <!-- Link to external CSS file for style -->
+    <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch&display=swap" rel="stylesheet">  <!-- Link to an external font 'Cabin Sketch' -->
+    <style>
+        .content {
+            margin-top: 60px;  /* Adjust based on header height */
+            padding: 20px;
+            display: flex;
+            flex-direction: column;  /* Aligns items in a vertical column */
+            align-items: center;  /* Centers content horizontally */
+        }
+        h1 {
+            text-align: center;    /* Centers the text */
+            color:rgb(25, 136, 95);   /* Sets the text color */
+            font-family: 'Cabin Sketch', cursive;
+        }
+        body {
+            height:100vh;  /* Sets body height to the full viewport height */
+            background:linear-gradient(to bottom, rgb(219, 192, 230), rgb(220, 126, 126)); /* Creates a gradient background from top to bottom */
+        }
+
+        form {
+            max-width: 600px;  /* Limits the form width for larger screens */
+            width: 100%;  /* Ajusts to smaller screen */
+            padding: 20px;  /* Space inside the form */
+            border: 1px solid #926a6a;  /* Adds a border around the form */
+            border-radius: 5px;   /* Rounds the form corners */
+            background:linear-gradient(to bottom, rgb(219, 192, 230), rgb(222, 126, 126));
+            display: flex;   /* Makes a flex container */
+            flex-direction: column;  /* Aligns items in a vertical column */
+            align-items: center;  /* Centers the form elements */
+        }
+        form div {
+            margin-bottom: 15px;  /* Space below each form input */
+            width: 100%;
+        }
+        form label {
+            display: block;   /* Makes the label appear above the input */
+            margin-bottom: 5px;  /* Adds space between label and input */
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 10px 0;
+            border: 1px solid #ccc;
+            background-color: rgb(239, 223, 244);
+            border-radius: 5px;
+        }
+        form button {
+            padding: 10px 20px;  /* Space inside the button */
+            background:linear-gradient(to bottom, rgb(219, 192, 230), rgb(220, 126, 126));  /* Sets a gradient background for the button */
+            color: #555; /* Button text color */
+            border: none;  /* Removes border */
+            border-radius: 5px; /* Rounds the corners button */
+            cursor: pointer; /* Changes cursor to pointer on hover */
+        }
+        form button:hover {
+            background-color: #555;  /* Changes button background */
+        }
+        @media (max-width: 600px) { /* Media query for small screen */
+            form {
+                padding: 10px;
+                width: 90%; /* Ajusts width for small screens */
+            }
+            form input, form textarea {
+                padding: 8px 0; /* Reduces padding */
+            }
+            form button {
+                width: 100%; /* Makes button width */
+                padding: 10px;  /* Ajusts buttom padding */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav> <!-- Navigation menu w/ links to others pages -->
+            <span class="hamburger" onclick="toggleMenu()">&#9776;</span>  <!-- Mobile nav, toggles menu visibility -->
+            <a href="index.html">Home</a>
+            <a href="about.html">About Me</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <div class="content"> <!-- Main content/Contact Form -->
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h1>Contact Us</h1> <!-- Contact form to collect user info -->
+        <form onsubmit="showThankYou(event)"> , <!-- Appear the ShowThankYou function when submitted -->
+            <div>
+                <label for="name">Name</label> <!-- Unput for users name -->
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="email">Email</label>  <!-- Input for users email -->
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="message">Message</label> <!-- Text area for users message -->
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div> 
+            <button type="submit">Submit</button>  <!-- Submit button for the form -->
+        </form>
+    </div>
+    <script>
+        function toggleMenu() {    /* Show/hide the menu on small screens */
+            var nav = document.querySelector('nav');
+            nav.classList.toggle('active');
+        }
+        function showThankYou(event) {   /*Prevents the form from submitting & refreshing the page */
+            event.preventDefault();
+            alert('Thank you for your message!');  /* Displays a Thank you message in an alert box */
+        }
+    </script>
+</body>
+</html>
