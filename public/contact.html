@@ -93,7 +93,7 @@
         <br>
         <br>
         <h1>Contact Us</h1> <!-- Contact form to collect user info -->
-        <form onsubmit="showThankYou(event)"> , <!-- Appear the ShowThankYou function when submitted -->
+        <form action="/send" method="post"> , <!-- Appear the ShowThankYou function when submitted -->
             <div>
                 <label for="name">Name</label> <!-- Unput for users name -->
                 <input type="text" id="name" name="name" required>
@@ -113,10 +113,6 @@
         function toggleMenu() {    /* Show/hide the menu on small screens */
             var nav = document.querySelector('nav');
             nav.classList.toggle('active');
-        }
-        function showThankYou(event) {   /*Prevents the form from submitting & refreshing the page */
-            event.preventDefault();
-            alert('Thank you for your message!');  /* Displays a Thank you message in an alert box */
         }
     </script>
 </body>

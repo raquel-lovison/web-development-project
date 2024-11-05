@@ -1,0 +1,16 @@
+{
+  "name": "web-development-project",
+  "version": "1.0.0",
+  "description": "This repository is used for the content of the IT3203 project.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}
