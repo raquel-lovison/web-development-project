@@ -93,7 +93,7 @@
         <br>
         <br>
         <h1>Contact Us</h1> <!-- Contact form to collect user info -->
-        <form action="/send" method="post"> , <!-- Appear the ShowThankYou function when submitted -->
+        <form onsubmit="submitForm(event)"> , <!-- Appear the ShowThankYou function when submitted -->
             <div>
                 <label for="name">Name</label> <!-- Unput for users name -->
                 <input type="text" id="name" name="name" required>
@@ -113,6 +113,32 @@
         function toggleMenu() {    /* Show/hide the menu on small screens */
             var nav = document.querySelector('nav');
             nav.classList.toggle('active');
+        }
+        function submitForm(event) {   /* Prevents the form from submitting & refreshing the page */
+            event.preventDefault();
+
+            // Get fields values
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+
+            // Create request body
+            const formData = {
+                name, email, message
+            };
+
+            // Post form to the backend in json format
+            fetch('/send', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': "application/json"
+                },
+                body: JSON.stringify(formData)
+            }).then(response => {
+                return response.json(); // Get the body of the response 
+            }).then(data => {
+                alert(data.message); /* Displays a message in an alert box */
+            });
         }
     </script>
 </body>
