@@ -23,7 +23,7 @@
         p {
             text-align: center;
             font-family:'Cabin Sketch', normal;
-            font-size: 19px;
+            font-size: normal;
             color:rgb(25, 136, 95);
         }
 
@@ -43,8 +43,11 @@
         }
 
         body {
-            height:100vh;  /* Sets body height to 100% of the viewport height */
-            background:linear-gradient(to bottom, lightblue, lightcoral)    /* Creates a gradient background that transitions from light blue to light coral */
+            height:90vh;  /* Sets body height to 100% of the viewport height */
+            background-image: url('images/home.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
         }
     </style>
 </head>
@@ -55,6 +58,7 @@
             <a href="index.html">Home</a>   <!-- Link to the Home page -->
             <a href="about.html">About Me</a>  <!-- Link to the About Me page -->
             <a href="contact.html">Contact</a>  <!-- Link to the Contact page -->
+            <button id="theme-toggle" onclick="toggleTheme()">🌞</button> <!-- Light/Dark Mode Toggle Button -->
         </nav>
     </header>
     <div class="content">
@@ -78,6 +82,40 @@
             var nav = document.querySelector('nav');
             nav.classList.toggle('active');
         }
+        function toggleTheme() {
+            const body = document.body;
+            const themeToggle = document.getElementById("theme-toggle");
+
+        // Toggle the dark-mode class on the body
+            body.classList.toggle("dark-mode");
+        
+        // Update button icon and store user preference
+            if (body.classList.contains("dark-mode")) {
+                themeToggle.textContent = "🌜"; // Change to moon icon
+                localStorage.setItem("theme", "dark");
+        } else {
+            themeToggle.textContent = "🌞"; // Change to sun icon
+            localStorage.setItem("theme", "light");
+        }
+    }
+
+     // Check user preference on page load
+     window.onload = function() {
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme === "dark") {
+            document.body.classList.add("dark-mode");
+            document.getElementById("theme-toggle").textContent = "🌜";
+        }
+    };
     </script>
+    <footer>
+        <div class="footer-content">
+            <br>
+            <br>
+            <br>
+            <!-- Copyright Info -->
+            <p>&copy; 2024 Raquel. All Rights Reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>

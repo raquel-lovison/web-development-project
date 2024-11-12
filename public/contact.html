@@ -19,21 +19,31 @@
             color:rgb(25, 136, 95);   /* Sets the text color */
             font-family: 'Cabin Sketch', cursive;
         }
+        p {
+            text-align: center;
+            font-family:'Cabin Sketch', normal;
+            font-size: normal;
+            color:rgb(25, 136, 95);
+        }
         body {
-            height:100vh;  /* Sets body height to the full viewport height */
-            background:linear-gradient(to bottom, rgb(219, 192, 230), rgb(220, 126, 126)); /* Creates a gradient background from top to bottom */
+            height:90vh;  /* Sets body height to the full viewport height */
+            background-image: url('images/contact.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;   
         }
 
         form {
             max-width: 600px;  /* Limits the form width for larger screens */
             width: 100%;  /* Ajusts to smaller screen */
             padding: 20px;  /* Space inside the form */
-            border: 1px solid #926a6a;  /* Adds a border around the form */
+            border: 1px solid #e8ddb8;  /* Adds a border around the form */
             border-radius: 5px;   /* Rounds the form corners */
-            background:linear-gradient(to bottom, rgb(219, 192, 230), rgb(222, 126, 126));
+            background:linear-gradient(to bottom, rgb(251, 251, 245), rgb(202, 241, 235));
             display: flex;   /* Makes a flex container */
             flex-direction: column;  /* Aligns items in a vertical column */
             align-items: center;  /* Centers the form elements */
+            color:rgb(25, 136, 95);
         }
         form div {
             margin-bottom: 15px;  /* Space below each form input */
@@ -46,20 +56,22 @@
         form input, form textarea {
             width: 100%;
             padding: 10px 0;
-            border: 1px solid #ccc;
-            background-color: rgb(239, 223, 244);
+            border: 1px solid #63d3a2;
+            background-color: rgb(223, 242, 237);
             border-radius: 5px;
+            color:rgb(10, 10, 10);
         }
         form button {
             padding: 10px 20px;  /* Space inside the button */
-            background:linear-gradient(to bottom, rgb(219, 192, 230), rgb(220, 126, 126));  /* Sets a gradient background for the button */
-            color: #555; /* Button text color */
+            background:linear-gradient(to bottom, rgb(rgb(25, 136, 95)));  /* Sets a gradient background for the button */
+            color: rgb(25, 136, 95); /* Button text color */
             border: none;  /* Removes border */
             border-radius: 5px; /* Rounds the corners button */
             cursor: pointer; /* Changes cursor to pointer on hover */
+            background-color: #9fdcc1;
         }
         form button:hover {
-            background-color: #555;  /* Changes button background */
+            background-color: #b3e3cf;  /* Changes button background */
         }
         @media (max-width: 600px) { /* Media query for small screen */
             form {
@@ -83,6 +95,7 @@
             <a href="index.html">Home</a>
             <a href="about.html">About Me</a>
             <a href="contact.html">Contact</a>
+            <button id="theme-toggle" onclick="toggleTheme()">🌞</button>
         </nav>
     </header>
     <div class="content"> <!-- Main content/Contact Form -->
@@ -140,6 +153,44 @@
                 alert(data.message); /* Displays a message in an alert box */
             });
         }
+        function toggleTheme() {
+            const body = document.body;
+            const themeToggle = document.getElementById("theme-toggle");
+
+        // Toggle the dark-mode class on the body
+            body.classList.toggle("dark-mode");
+        
+        // Update button icon and store user preference
+            if (body.classList.contains("dark-mode")) {
+                themeToggle.textContent = "🌜"; // Change to moon icon
+                localStorage.setItem("theme", "dark");
+        } else {
+            themeToggle.textContent = "🌞"; // Change to sun icon
+            localStorage.setItem("theme", "light");
+        }
+    }
+
+     // Check user preference on page load
+     window.onload = function() {
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme === "dark") {
+            document.body.classList.add("dark-mode");
+            document.getElementById("theme-toggle").textContent = "🌜";
+        }
+    };
     </script>
+    <footer>
+        <div class="footer-content">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <!-- Copyright Info -->
+            <p>&copy; 2024 Raquel. All Rights Reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
